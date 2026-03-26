@@ -10,23 +10,32 @@ namespace Stretching
         {
             foreach (var exercise in list)
             {
-                Console.WriteLine($"Nästa övning {exercise.Name}");
 
                 for (int t = 10; t > 0; t--)
                 {
+                    Console.WriteLine($"Nästa övning: \u001b[1m{exercise.Name.ToUpper()}\u001b[0m\n");
+                    Console.WriteLine($"{exercise.Instruction}\n");
                     Console.WriteLine($"Förberedelse: {t} sekunder");
-                    //Thread.Sleep(1000);
+                    Thread.Sleep(1000);
+                    Console.Clear();
                 }
 
-                Console.WriteLine("Nu kör vi!");
 
                 for (int i = 30; i > 0; i--)
                 {
+                    Console.WriteLine($"\u001b[1m{exercise.Name.ToUpper()}\u001b[0m\n");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Nu kör vi!\n");
+                    Console.ResetColor();
                     Console.WriteLine($"Tid kvar: {i} sekunder");
-                    //Thread.Sleep(1000);
+                    Thread.Sleep(1000);
+                    Console.Clear();
                 }
-
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Tiden är ute!");
+                Console.ResetColor();
+                Thread.Sleep(2000);
+                Console.Clear();
             }
         }
     }
