@@ -45,7 +45,7 @@ namespace Stretching
 
             exerciseList.AddExercise(exercise9);
 
-            Counter.CountDown(exercise1);
+            Counter.CountDown(exerciseList.ListOfExercises);
         }
     }
 }

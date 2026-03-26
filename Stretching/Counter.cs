@@ -6,26 +6,28 @@ namespace Stretching
 {
     public class Counter
     {
-        public static void CountDown(Exercise exercise)
+        public static void CountDown(List<Exercise> list)
         {
-            Console.WriteLine($"Nästa övning {exercise.Name}");
-
-            for (int t = 10; t > 0; t--)
+            foreach (var exercise in list)
             {
-                Console.WriteLine($"Förberedelse: {t} sekunder");
-                Thread.Sleep(1000);
+                Console.WriteLine($"Nästa övning {exercise.Name}");
+
+                for (int t = 10; t > 0; t--)
+                {
+                    Console.WriteLine($"Förberedelse: {t} sekunder");
+                    //Thread.Sleep(1000);
+                }
+
+                Console.WriteLine("Nu kör vi!");
+
+                for (int i = 30; i > 0; i--)
+                {
+                    Console.WriteLine($"Tid kvar: {i} sekunder");
+                    //Thread.Sleep(1000);
+                }
+
+                Console.WriteLine("Tiden är ute!");
             }
-
-            Console.WriteLine("Nu kör vi!");
-
-            for (int i = 30; i > 0; i--)
-            {
-                Console.WriteLine($"Tid kvar: {i} sekunder");
-                Thread.Sleep(1000);
-            }
-
-            Console.WriteLine("Tiden är ute!");
-
         }
     }
 }
