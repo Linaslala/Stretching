@@ -11,7 +11,7 @@ namespace Stretching
             foreach (var exercise in list)
             {
 
-                for (int t = 10; t > 0; t--)
+                for (int t = exercise.PreparationTime; t > 0; t--)
                 {
                     Console.WriteLine($"Nästa övning: \u001b[1m{exercise.Name.ToUpper()}\u001b[0m\n");
                     Console.WriteLine($"{exercise.Instruction}\n");
@@ -20,8 +20,7 @@ namespace Stretching
                     Console.Clear();
                 }
 
-
-                for (int i = 30; i > 0; i--)
+                for (int i = exercise.ExerciseTime; i > 0; i--)
                 {
                     Console.WriteLine($"\u001b[1m{exercise.Name.ToUpper()}\u001b[0m\n");
                     Console.ForegroundColor = ConsoleColor.Green;

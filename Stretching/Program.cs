@@ -7,9 +7,9 @@ namespace Stretching
     {
         static void Main(string[] args)
         {
-            var exerciseList = ExerciseData.Create();
+            var app = new Application();
 
-            Counter.CountDown(exerciseList);
+            app.Run();
         }
     }
 }
