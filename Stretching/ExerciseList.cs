@@ -11,7 +11,6 @@ namespace Stretching
         public void AddExercise(Exercise exercise)
         {
             ListOfExercises.Add(exercise);
-
         }
     }
 }
